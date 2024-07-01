@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="./css/login.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Iniciar Sesión</h3>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="user">Nombre de usuario</label>
+                                <input type="text" class="form-control" id="user"
+                                    placeholder="Introduce tu nombre de usuario" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Contraseña</label>
+                                <input type="password" class="form-control" id="password"
+                                    placeholder="Introduce tu contraseña" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                        </form>
+                        <div class="text-center mt-3">
+                            <a href="#">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="#">¿No tienes una cuenta? Regístrate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const form = document.getElementById('loginForm');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const user = document.getElementById('user').value;
+                const password = document.getElementById('password').value;
+
+                const credentials = {
+                    'daniel': 'Dansan98',
+                    'ingreyeslara': 'Utd_2024',
+                };
+
+                if (user === '' || password === '') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Campos vacíos',
+                        text: 'Por favor, complete todos los campos.',
+                    });
+                } else if (!credentials[user] || credentials[user] !== password) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Credenciales incorrectas',
+                        text: 'Credenciales incorrectas. Por favor, inténtelo de nuevo.',
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Inicio de sesión exitoso',
+                        text: 'Bienvenido ' + user + '!',
+                    }).then(() => {
+                        form.reset();
+                        window.location.href = 'https://bernardo.projectsutd.online/parcial1/';
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
