@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadoras de Efectividad</title>
+    <link rel="stylesheet" href="../css/calculadora.css">
+    <style>
+        iframe {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="showSidebar()">&#9776;</div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="hideSidebar()">&times;</a>
+        <a href="../index.html">Inicio</a>
+        <a href="./definicion.html">Definiciones</a>
+        <a href="./curriculums.html">Curriculums</a>
+    </div>
+    <h1>Calculadoras</h1>
+    <main>
+        <section class="calculadora">
+            <h2 onclick="toggleIframe('iframe1')">Efectividad Cotidiana</h2>
+            <iframe id="iframe1" src="efectividad_cotidiana.html" frameborder="0" width="100%" height="600px"></iframe>
+        </section>
+        <section class="calculadora">
+            <h2 onclick="toggleIframe('iframe2')">Efectividad Empresarial</h2>
+            <iframe id="iframe2" src="efectividad_empresarial.html" frameborder="0" width="100%" height="600px"></iframe>
+        </section>
+        <section class="calculadora">
+            <h2 onclick="toggleIframe('iframe3')">Efectividad Eficiencia Eficacia</h2>
+            <iframe id="iframe3" src="efectividad_eficiencia_eficacia.html" frameborder="0" width="100%" height="600px"></iframe>
+        </section>
+        <section class="calculadora">
+            <h2 onclick="toggleIframe('iframe4')">RIO</h2>
+            <iframe id="iframe4" src="rio.html" frameborder="0" width="100%" height="600px"></iframe>
+        </section>
+    </main>
+
+    <script>
+        function showSidebar() {
+            document.getElementById("sidebar").style.width = "250px";
+        }
+    
+        function hideSidebar() {
+            document.getElementById("sidebar").style.width = "0";
+        }
+
+        function toggleIframe(iframeId) {
+            // Hide all iframes
+            const iframes = document.querySelectorAll('iframe');
+            iframes.forEach(iframe => iframe.style.display = 'none');
+
+            // Show the clicked iframe
+            const iframe = document.getElementById(iframeId);
+            iframe.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla con botón de descarga</title>
+    <link rel="stylesheet" href="../css/curriculum.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="menu-icon" onclick="showSidebar()">&#9776;</div>
+    </header>
+    
+    <div class="sidebar" id="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="hideSidebar()">&times;</a>
+        <a href="../index.html">Inicio</a>
+        <a href="./definicion.html">Definiciones</a>
+        <a href="./curriculums.html">Curriculums</a>
+        <a href="./components/Calculadora.html">Calculadora</a>
+
+    </div>
+
+<div class="container">
+    <h2>Alumnos</h2>
+    <a href="https://ed03e2.atlassian.net/">Jira</a>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Foto</th>
+                <th>Curriculum</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Daniel Abraham Sanchez Esquivel</td>
+                <td><img src="../images/img2.jpg" class="student-photo" alt="Foto de Daniel"></td>
+                <td><button class="download-btn" onclick="openInNewTab('../curriculums/curriculum_daniel.pdf')">Descargar</button></td>
+            </tr>
+            <tr>
+                <td>Edgar Arturo Vallejo Corral</td>
+                <td><img src="../images/img1.jpg" class="student-photo" alt="Foto de Edgar"></td>
+                <td><button class="download-btn" onclick="openInNewTab('../curriculums/curriculum_edgar.pdf')">Descargar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function openInNewTab(filename) {
+        window.open(filename, '_blank');
+    }
+
+    function showSidebar() {
+        document.getElementById("sidebar").style.width = "250px";
+    }
+
+    function hideSidebar() {
+        document.getElementById("sidebar").style.width = "0";
+    }
+</script>
+
+</body>
+</html>

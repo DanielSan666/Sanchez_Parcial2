@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Parcial 1</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="menu-icon" onclick="showSidebar()">&#9776;</div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="hideSidebar()">&times;</a>
+        <a href="#home">Inicio</a>
+        <a href="./components/definicion.html">Definiciones</a>
+        <a href="./components/curriculums.html">Curriculums</a>
+        <a href="./components/Calculadora.html">Calculadora</a>
+    </div>
+
+    <div class="hero">
+        <h2 style="text-align: center;">Bienvenido al proyecto de Parcial 1</h2>
+        <div style="text-align: center;">
+            <img src="./images/project.jpg" alt="Imagen 1" class="image" style="width: 350px;">
+            <p>Realizado por:</p>
+            <p>Sanchez Esquivel Daniel Abraham</p>
+            <p>Vallejo Corral Edgar Arturo</p>
+        </div>
+    </div>
+    
+
+    <footer class="footer">
+        <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showSidebar() {
+            document.getElementById('sidebar').style.width = '250px';
+        }
+
+        function hideSidebar() {
+            document.getElementById('sidebar').style.width = '0';
+        }
+    </script>
+</body>
+</html>

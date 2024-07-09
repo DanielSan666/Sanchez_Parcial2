@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #0983ca;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    color: white;
+}
+
+.navbar .logo {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+}
+
+.menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.hero {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin: 0.5em 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 0.2em 0;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
